@@ -389,11 +389,11 @@ def main():
                                  dest='dry_run')
         move_parser.set_defaults(func=main_move)
 
-        move_parser = subparsers.add_parser('copy')
-        move_parser.add_argument('--name', default='default')
-        move_parser.add_argument('-n', '--dry-run', action='store_true',
+        copy_parser = subparsers.add_parser('copy')
+        copy_parser.add_argument('--name', default='default')
+        copy_parser.add_argument('-n', '--dry-run', action='store_true',
                                  dest='dry_run')
-        move_parser.set_defaults(func=main_copy)
+        copy_parser.set_defaults(func=main_copy)
 
         args = parser.parse_args()
         args.func(args)
