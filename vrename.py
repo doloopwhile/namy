@@ -396,6 +396,9 @@ def main():
         copy_parser.set_defaults(func=main_copy)
 
         args = parser.parse_args()
+        if not hasattr(args, "func"):
+            parser.print_help()
+            parser.exit(1)
         args.func(args)
     except Exception:
         traceback.print_exc(file=sys.stderr)
